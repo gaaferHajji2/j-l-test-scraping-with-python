@@ -14,7 +14,7 @@ def getTitle(url):
     else:
         bs = BeautifulSoup(data.content, 'lxml');
 
-        print(f"The H1-Tag Of Url {url} Is: {bs.h1} ");
+        print(f"The H1-Tag Of Url {url} Is: {bs.h1} " if bs.h1 != None else f"No Title For URL {url}");
 
         print("\t\t", "-" * 15);
 
