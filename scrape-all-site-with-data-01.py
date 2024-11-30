@@ -8,7 +8,7 @@ pages = set();
 
 
 def get_links(page_url):
-    data = requests.get(f'http://en.wikipedia.org{page_url}');
+    data = requests.get(f'http://en.wikipedia.org{page_url}', allow_redirects=True);
     bs = BeautifulSoup(data.content, 'lxml');
 
     try:
