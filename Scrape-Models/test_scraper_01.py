@@ -2,6 +2,8 @@ from website import Website;
 
 from crawler import Crawler;
 
+# The Old Version Of Scraper Function
+
 siteData = [
     ['O\'Reilly', 'https://www.oreilly.com', 'h1', 'div.title-description'],
     ['Reuters', 'https://www.reuters.com', 'h1', 'article-body__content__17Yit'],
