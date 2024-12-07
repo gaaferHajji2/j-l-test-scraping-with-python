@@ -1,8 +1,15 @@
-from website import Website;
+# from website import Website;
 
 from crawler import Crawler;
 
 # The Old Version Of Scraper Function
+
+class Website:
+    def __init__(self, name, url, title, body):
+        self.name       = name;
+        self.url        = url;
+        self.titleTag   = title;
+        self.bodyTag    = body;
 
 siteData = [
     ['O\'Reilly', 'https://www.oreilly.com', 'h1', 'div.title-description'],
@@ -16,7 +23,8 @@ websites= [];
 for name, url, title, body in siteData:
     websites.append(Website(name, url, title, body));
 
-crawler = Crawler();
+# Here We Use Dummy Variable To Begin Work
+crawler = Crawler(website=websites);
 
 crawler.get_content(websites[0], '/library/view/web-scraping-with/9781491910283').get_data();
 

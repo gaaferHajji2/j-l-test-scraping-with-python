@@ -38,9 +38,9 @@ class Crawler:
             title = self.get_elements(bs, website.titleTag);
             body  = self.get_elements(bs, website.bodyTag);
 
-            return Content(url, title, body);
+            return Content('', url, title, body);
     
-        return Content(url, '', '');
+        return Content('', url, '', '');
 
     def get_content_2(self, topic, url):
         bs = self.get_page(url);
