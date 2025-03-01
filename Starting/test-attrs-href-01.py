@@ -1,15 +1,15 @@
-import requests;
+import requests
 
-from bs4 import BeautifulSoup;
+from bs4 import BeautifulSoup
 
-data = requests.get("https://en.wikipedia.org/wiki/Kevin_Bacon");
+data = requests.get("https://en.wikipedia.org/wiki/Kevin_Bacon")
 
-bs = BeautifulSoup(data.content, 'lxml');
+bs = BeautifulSoup(data.content, 'lxml')
 
-links = bs.find_all('a');
+links = bs.find_all('a')
 
 for link in links:
     if 'href' in link.attrs:
-        print("The Link is: ", link);
+        print("The Link is: ", link)
     else:
-        print(link," Doesn't has href");
+        print(link," Doesn't has href")

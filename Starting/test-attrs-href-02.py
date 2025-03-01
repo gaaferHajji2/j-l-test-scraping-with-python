@@ -1,16 +1,16 @@
-import requests;
+import requests
 
-from bs4 import BeautifulSoup;
+from bs4 import BeautifulSoup
 
-import re;
+import re
 
-data = requests.get("https://en.wikipedia.org/wiki/Kevin_Bacon");
+data = requests.get("https://en.wikipedia.org/wiki/Kevin_Bacon")
 
-bs = BeautifulSoup(data.content, 'lxml');
+bs = BeautifulSoup(data.content, 'lxml')
 
 links = bs\
 .find('div', { 'id': 'bodyContent' }) \
-.find_all('a', { 'href': re.compile('^(/wiki/)((?!:).)*$') });
+.find_all('a', { 'href': re.compile('^(/wiki/)((?!:).)*$') })
 
 for link in links:
-    print("The HREF Of Link Is: ", link['href']);
+    print("The HREF Of Link Is: ", link['href'])

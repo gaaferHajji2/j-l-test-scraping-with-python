@@ -1,9 +1,9 @@
-from bs4 import BeautifulSoup as bs;
+from bs4 import BeautifulSoup
 
-import requests;
+import requests
 
-data = requests.get('http://pythonscraping.com/pages/page1.html');
+data = requests.get('http://pythonscraping.com/pages/page1.html')
 
-t1 = bs(data.content, 'lxml');
+t1 = BeautifulSoup(data.content, 'lxml')
 
-print(t1.h1);
+print(t1.h1)

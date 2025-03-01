@@ -1,15 +1,15 @@
-import requests;
+import requests
 
-from bs4 import BeautifulSoup;
+from bs4 import BeautifulSoup
 
-data = requests.get('http://www.pythonscraping.com/pages/page3.html');
+data = requests.get('http://www.pythonscraping.com/pages/page3.html')
 
-bs = BeautifulSoup(data.content, 'lxml');
+bs = BeautifulSoup(data.content, 'lxml')
 
-siblings = bs.find('table', {'id': 'giftList'}).tr.next_siblings;
+siblings = bs.find('table', {'id': 'giftList'}).tr.next_siblings
 
-if siblings != None:
+if siblings is not None:
     for sibling in siblings:
-        print(sibling);
+        print(sibling)
 else:
-    print('No Sibling Found In Code');
+    print('No Sibling Found In Code')

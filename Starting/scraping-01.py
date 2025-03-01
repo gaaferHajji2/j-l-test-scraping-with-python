@@ -1,5 +1,5 @@
-import requests;
+import requests
 
-data = requests.get('http://pythonscraping.com/pages/page1.html');
+data = requests.get('http://pythonscraping.com/pages/page1.html')
 
-print(data.content);
+print(data.content)

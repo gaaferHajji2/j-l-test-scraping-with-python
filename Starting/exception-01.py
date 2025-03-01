@@ -1,13 +1,13 @@
-from bs4 import BeautifulSoup;
+from bs4 import BeautifulSoup
 
-import requests;
+import requests
 
 try:
-    data = requests.get("https://jafar.loka");
+    data = requests.get("https://jafar.loka")
 except requests.exceptions.ConnectionError as e:
     # print(type(e));
-    print(e.__str__());
+    print(e.__str__())
 else:
-    bs = BeautifulSoup(data.content);
+    bs = BeautifulSoup(data.content)
 
-    print(bs.tag1);
+    print(bs.tag1)

@@ -1,34 +1,33 @@
-import requests;
+import requests
 
-from bs4 import BeautifulSoup;
+from bs4 import BeautifulSoup
 
-import re;
+import re
 
-import datetime;
+import datetime
 
-import random;
+import random
 
-random.seed(datetime.datetime.now().__str__());
+random.seed(datetime.datetime.now().__str__())
 
 def getLinks(article_url):
-    data = requests.get(f'http://en.wikipedia.org{article_url}');
-    bs = BeautifulSoup(data.content, 'lxml');
+    data = requests.get(f'http://en.wikipedia.org{article_url}')
+    bs = BeautifulSoup(data.content, 'lxml')
     try:
-
         return bs.find('div', { 'id': 'bodyContent' }) \
-        .find_all('a', { 'href': re.compile('^(/wiki/)((?!:).)*$') });
+        .find_all('a', { 'href': re.compile('^(/wiki/)((?!:).)*$') })
     except AttributeError as e:
-        print("Error Occurred With Data: ", e.__str__());
-        return [];
+        print("Error Occurred With Data: ", e.__str__())
+        return []
     except Exception as ex:
-        print("General Error Happened: ", ex.__str__());
-        return [];
+        print("General Error Happened: ", ex.__str__())
+        return []
 
-links = getLinks('/wiki/Kevin_Bacon');
+links = getLinks('/wiki/Kevin_Bacon')
 
 while len(links) > 0:
-    new_article = links[random.randint(0, len(links) - 1)].attrs['href'];
+    new_article = links[random.randint(0, len(links) - 1)].attrs['href']
 
-    print("We Choose Random New Article: ", new_article);
+    print("We Choose Random New Article: ", new_article)
 
-    links = getLinks(new_article);
+    links = getLinks(new_article)

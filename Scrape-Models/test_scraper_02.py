@@ -1,6 +1,6 @@
-from crawler import Crawler;
+from crawler import Crawler
 
-from website import Website;
+from website import Website
 
 siteData = [
     ['Reuters', 'http://reuters.com', 'https://www.reuters.com/search/news?blob=',
@@ -10,7 +10,7 @@ siteData = [
     'div.article-info', 'h4.title a', True, 'h1', 'div.core-block']
 ]
 
-sites = [];
+sites = []
 
 for name, url, search, rListing, rUrl, absUrl, tt, bt in siteData:
     sites.append(Website(name, url, search, rListing, rUrl, absUrl, tt, bt))
