@@ -8,7 +8,7 @@ from wikispider.items import Article
 
 class ArticlesSpider(CrawlSpider):
 
-    name = 'articleItems'
+    name = 'articlePipelines'
 
     allowed_domains = ['wikipedia.org']
 
